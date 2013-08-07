@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+		<style>
+			body {
+				background: #F8F8F8;
+				padding: 10px 0 2px;
+				
+			} 
+		</style>
+	</head>
+	<body>
+		<div class="mail_body">
+			<h1>Hey <%= @user.name %></h1>
+			<p>
+				You have <strong><%= @unfollower_ids.count %></strong> Unfollowers 
+				<br/>
+			</p>
+			
+			<ul>
+				<% @unfollower_ids.each do |x| %>
+				   <li><a href="https://twitter.com/account/redirect_by_id?id=<%= x %>">Click here to view profile</a></li>
+				<% end %>
+			</ul>
+			
+			
+			<p>
+				Good day!
+			</p>
+		</div>
+	</body>
+</html>

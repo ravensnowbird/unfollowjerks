@@ -1,0 +1,57 @@
+<h2>Settings</h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+<%= devise_error_messages! %>
+<div class="row">
+	<div class="small-4 columns" style="margin: 10px auto;">
+		<h6 class="text-center">Choose your updates frequency</h6>
+	</div>
+	<div class="small-4 columns">
+	<div class=" switch radius columns" style="margin: 10px auto;">
+		<input id="c" name="user[mail_frequency]" type="radio" <%= "checked" if current_user.mail_frequency == "monthly" %> value="monthly">
+		<label for="c" onclick="">Monthly</label>
+
+		<input id="c1" name="user[mail_frequency]" type="radio" <%= "checked" if current_user.mail_frequency == "weekly" %> value="weekly">
+		<label for="c1" onclick="">Weekly</label>
+
+		<span></span>
+	</div>
+	</div>
+	<div class="small-4 columns" style="margin: 10px auto;">
+		
+	</div>
+	
+</div>
+
+<div class="row">
+	<div class="small-4 columns" style="margin: 10px auto;">
+		<h6 class="text-center">Receiving Emails Status</h6>
+	</div>
+	<div class="small-4 columns">
+	<div class="switch radius columns" style="margin: 10px auto;">
+		<input id="c" name="user[recieve_emails]" type="radio" <%= "checked" if !current_user.recieve_emails %> value="false">
+		<label for="c" onclick="">Off</label>
+
+		<input id="c1" name="user[recieve_emails]" type="radio" <%= "checked" if current_user.recieve_emails %> value="true">
+		<label for="c1" onclick="">On</label>
+
+		<span></span>
+	</div>
+	</div>
+	<div class="small-4 columns" style="margin: 10px auto;">
+		
+	</div>
+	
+</div>
+
+<div align="center">
+	<%= f.submit "Update" , :class => "button-base size style radius shine button" %>
+</div>
+<% end %>
+<br />
+<br />
+<br />
+
+ <%= button_to "Click here to delete your account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => "right tiny button secondary" %>
+
+

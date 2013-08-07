@@ -1,0 +1,7 @@
+<%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+  <p class="text-center">
+    <%= link_to raw(image_tag("sign-in-with-twitter-gray.png" , :alt => "Sign in with Twitter", :title => "Sign in with Twitter")), omniauth_authorize_path(resource_name, provider), :id => "twitter_login" %>
+  </p>
+  <% end -%>
+<% end -%>

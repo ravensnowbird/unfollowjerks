@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+	<!--<![endif]-->
+	<head>
+		<meta charset="utf-8" />
+
+		<!-- Uncomment to make IE8 render like IE7 -->
+		<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+
+		<!-- Set the viewport width to device width for mobile -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Unfollow Jerks!</title>
+
+		<%= stylesheet_link_tag    "application" %>
+		<%= javascript_include_tag "vendor/custom.modernizr" %>
+		<%= csrf_meta_tags %>
+	</head>
+
+	<body>
+		<div class="row page_wrap">
+			<!-- page wrap -->
+			<div class="twelve columns">
+				<!-- page wrap -->
+
+				<div class="row">
+					<div class="twelve columns header_nav">
+
+						<div class="twelve columns"  style="text-align: center;">
+							<a href="index.html"><%= image_tag "logo.png" , :style => "border:none" %></a>
+
+						</div>
+						<% unless current_user.blank? %>
+						  <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "tiny button right" , :style => "margin-right: 10px;"%>
+						<% end %>
+					</div>
+					
+				</div><!-- END Header -->
+				<% if notice && current_user %>
+				<div data-alert="" class="alert-box success">
+					<% if current_user.created_at.to_date == Date.today.to_date %>
+					Congratulations ! You will start recieving emails from the next cycle.
+					<% else %>
+					Welcome back ! 
+					<% end %> 
+				</div>
+				<% end %>
+				<%= yield %>
+				<br />
+				<br />
+				<br />
+				<div class="row">
+					<div class="twelve columns header_nav">
+
+						<div class="large-4 columns" style="">
+							<h6>Credits</h6>
+							<ul style="list-style: none;">
+								<li>
+									Server - <strong>Heroku</strong>
+								</li>
+								<li>
+									Emails - <strong>MailChimp</strong>
+								</li>
+								<li>
+									Theme - <strong>CSS Template Heaven</strong>
+								</li>
+							</ul>
+
+						</div>
+						<div class="large-4 columns" style="text-align: right;">
+							<h6>Code</h6>
+							<ul style="list-style: none;">
+								<li>
+									Repo - <strong>Github</strong>
+								</li>
+								<li>
+									Framework - <strong>Ruby on Rails</strong>
+								</li>
+								<li>
+									CSS - <strong>Zurb Foundation</strong>
+								</li>
+							</ul>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+		<%= javascript_include_tag "application" %>
+	</body>
+</html>

@@ -1,0 +1,75 @@
+<div class="row">
+
+	<div class="box photo masonry-brick" style="width: 35%;height: 350px;">
+		<a href="#"><%= image_tag "img2-rev.png", :alt => "desc", :style => "border:none" %></a>
+	</div>
+	<div class="box photo masonry-brick" style="width: 62%;height: 350px;">
+		<h3 style="text-align:center"><strong>Why ? </strong></h3>
+		<p>
+			<strong>1. </strong>Honestly, i hate it when some software or application posts tweets on my behalf. I wanted something i can control and still track all the <strong>Jerks</strong> who secretly unfollow .You can configure this service to get weekly or monthly remainders via email.
+			<br />
+			<strong>2. </strong>You can stop emails from this application directly via twitter settings or from the settings tab. Also, i dont sell your email ids , it made it out of my freetime.
+
+		</p>
+		Appreciate your feed back at <strong>@ravensnowbird</strong> :)
+		<br />
+		<br />
+		<a href="#"><%= image_tag "img1.jpg", :alt => "desc", :style => "border:none" %></a>
+	</div>
+</div>
+
+<div class="row hide-for-small">
+
+	<div class="twelve columns">
+		<div class="heading_dots">
+			<h4 class="heading_largesize" style="margin-bottom:10px"><span class="heading_center_bg"> </span> Step 1 </h4>
+		</div>
+	</div>
+
+</div><!-- end row -->
+<h6 class="text-center">Choose your updates frequency</h6>
+<div class="small-4"  style="margin: 10px auto;" >
+	<div class="switch radius">
+		<input id="c" name="mail_frequency" type="radio" checked="" value="monthly">
+		<label for="c" onclick="">Monthly</label>
+
+		<input id="c1" name="mail_frequency" type="radio" value="weekly">
+		<label for="c1" onclick="">Weekly</label>
+
+		<span></span>
+	</div>
+</div>
+<div class="row hide-for-small">
+
+	<div class="twelve columns">
+		<div class="heading_dots">
+			<h4 class="heading_largesize" style="margin-bottom:10px"><span class="heading_center_bg"> </span> Step 2 </h4>
+		</div>
+	</div>
+
+</div><!-- end row -->
+<h6 class="text-center">Set your email</h6>
+<div class="row hide-for-small text-center">
+	<div class="large-4 columns">
+		<span>-</span>
+	</div>
+	<div class="large-4 columns" >
+		<input type="text" placeholder="Enter your Email" id="email">
+		<small id="email_error" class="error" style="display: none;">Invalid Email</small>
+	</div>
+	<div class="large-4 columns">
+		-
+	</div>
+</div>
+
+<div class="row hide-for-small">
+
+	<div class="twelve columns">
+		<div class="heading_dots">
+			<h4 class="heading_largesize" style="margin-bottom:10px"><span class="heading_center_bg"> </span> Step 3 </h4>
+		</div>
+	</div>
+
+</div><!-- end row -->
+<h6 class="text-center">Sign in with Twitter</h6>
+<%= render "devise/shared/links" %>
