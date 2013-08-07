@@ -10,5 +10,6 @@ Files you should change:
 
 * config/application.rb "YOUR MailChimp EMAIL / USERNAME" , "YOUR MailChimp Password" 
 
-Cheers
+Cheers!
+
 Vivek Sampara
