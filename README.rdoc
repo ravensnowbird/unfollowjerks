@@ -1,28 +1,14 @@
-== README
+== Unfollow Jerks
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the source code of unfollowjerks i made as a hobby. Feel free to clone and have your own personal setup
 
-Things you may want to cover:
+Files you should change:
 
-* Ruby version
+* config/initializers/environment_variables.rb  "YOUR TWITTER API KEY" , "YOUR TWITTER API SECRET"
 
-* System dependencies
+* app/models/user.rb "YOUR TWITTER CONSUMER KEY" , "YOUR TWITTER API SECRET"
 
-* Configuration
+* config/application.rb "YOUR MailChimp EMAIL / USERNAME" , "YOUR MailChimp Password" 
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Cheers
+Vivek Sampara
